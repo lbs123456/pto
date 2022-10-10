@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2 style="text-align: center;">
+
+    <img alt="Avatar" class="avatar" src="{{ url_for('static', filename='icon.png') }}">
+    Add new character
+
+</h2>
+
+<form method="post" enctype=multipart/form-data>
+<p>  <strong class="you">上传图片:</strong></p>
+    <p style="float: right" ><input class="yo" size="100" type="file" name="photo" required></p>
+  <p> <label> Name  </label>   <input type="text" name="name" autocomplete="off" required></p>
+  <p> <label> age </label>     <input type="text" name="age" autocomplete="off" required></p>
+  <p> <label> height  </label> <input type="text" name="height" autocomplete="off" required></p>
+   <p><label> gender  </label> <input type="text" name="gender" autocomplete="off" required></p>
+   <p><label> origo   </label> <input type="text" name="origo" autocomplete="off" required></p>
+
+
+
+
+
+
+   <p> <label> <input class="btn" type="submit" name="submit" value="Add"> </label> <label><a class="btn"  href="{{ url_for('home') }}">back</a> </label></p>
+</form>
+
+
+
+{% endblock %}

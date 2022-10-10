@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>
+    <img alt="Avatar" class="avatar" src="{{ url_for('static', filename='icon.png') }}">
+   whole list
+</h2>
+ <nav>
+        <ul>
+            <li><a href="{{ url_for('add') }}">add</a></li>
+            {% if current_user.is_authenticated %}
+            <li><a href="{{ url_for('logout') }}">Logout</a></li>
+            {% endif %}
+        </ul>
+ </nav>
+<ul  class="movie-list">
+        {% for u in user %}
+        <li>{{ u.name }}
+
+    <span class="float-right">
+ <form class="inline-form" method="post" action="{{ url_for('delete', id=u.id) }}">
+
+        <input class="de" type="submit" name="delete" value="Delete" onclick="return confirm('Are you sure?')">
+
+            <a class="de" href="{{ url_for('detail',id=u.id,name=u.name) }}" target="_blank" title="view detail">detail</a>
+        </form>
+    </span>
+            </li>
+        {% endfor %}
+
+
+</ul>
+{% endblock %}

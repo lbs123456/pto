@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>
+
+    <img alt="Avatar" class="avatar" src="{{ url_for('static', filename='icon.png') }}">
+    {{user.name}}`s List
+
+</h2>
+ <nav>
+        <ul>
+            <li><a href="{{ url_for('home') }}" >back</a></li>
+        </ul>
+ </nav>
+<p style="text-align: center;">
+    <img  src="{{url_for('static',filename = adr)}}"/>
+</p>
+ <p style="text-align: center;">简介</p>
+<ul  class="movie-list">
+        <li>年龄 : {{ user.intros[0].age }}</li>
+        <li>身高 : {{ user.intros[0].height }}</li>
+        <li>性别 : {{ user.intros[0].gender }}</li>
+        <li>籍贯 : {{ user.intros[0].origo }}</li>
+</ul>
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>
+    <img alt="Avatar" class="avatar" src="{{ url_for('static', filename='icon.png') }}">
+   网站使用说明
+</h2>
+<ul  class="movie-list">
+    <li>除了证明熟悉flask外没有什么用，add需要账号密码</li>
+    <li> 用户名：libs</li>
+    <li>密码：1234567</li>
+</ul>
+
+{% endblock %}
